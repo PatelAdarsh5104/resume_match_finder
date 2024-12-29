@@ -10,12 +10,14 @@ def sidebar():
         uploaded_file = st.sidebar.file_uploader("Choose an Resume file",type=["pdf"])
         if uploaded_file is not None:
             uploaded_file.read()
-            st.session_state.resume_content = extract_pdf_content(uploaded_file)
+            resume_content = extract_pdf_content(uploaded_file)
+            st.session_state["resume_content"] = resume_content
+            st.toast("Content Extracted from Resume")
     elif input_type == "DOCX":
         uploaded_file = st.sidebar.file_uploader("Choose an Resume file",type=["docx"])
         if uploaded_file is not None:
-            st.session_state.resume_content = extract_docx_content(uploaded_file)
-            st.sidebar.write(st.session_state.resume_content)
+            resume_content = extract_docx_content(uploaded_file)
+            st.session_state["resume_content"] = resume_content
             st.toast("Content Extracted from Resume")
 
 
