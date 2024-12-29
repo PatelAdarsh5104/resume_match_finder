@@ -1,0 +1,11 @@
+## LLM
+groq
+python-dotenv
+## extract webpage content
+langchain_community
+beautifulsoup4
+requests
+## Extract PDF and word  content
+pypdf
+python-docx
+streamlit
